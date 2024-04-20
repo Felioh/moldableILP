@@ -1,0 +1,29 @@
+
+Gurobi 11.0.0 (linux64, Python) logging started Fri Feb  9 16:29:00 2024
+
+Set parameter LogFile to value "gurobi.log"
+
+Gurobi 11.0.0 (linux64, Python) logging started Fri Feb  9 16:29:24 2024
+
+Set parameter LogFile to value "gurobi.log"
+
+Gurobi 11.0.0 (linux64, Python) logging started Fri Feb  9 16:29:39 2024
+
+Set parameter LogFile to value "gurobi.log"
+
+Gurobi 11.0.0 (linux64, Python) logging started Fri Feb  9 16:32:50 2024
+
+Set parameter LogFile to value "gurobi.log"
+
+Gurobi 11.0.0 (linux64, gurobi_cl) logging started Fri Feb  9 16:43:32 2024
+
+Set parameter Username
+Set parameter LogFile to value "gurobi.log"
+Using license file /home/ohnesorge/gurobi.lic
+Academic license - for non-commercial use only - expires 2025-02-08
+
+Gurobi 9.0.0 (linux64, Python) logging started Fri Feb  9 16:54:44 2024
+
+Using license file /home/ohnesorge/gurobi.lic
+Set parameter LogFile to value gurobi.log
+Academic license - for non-commercial use only

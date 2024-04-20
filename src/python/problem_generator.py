@@ -46,31 +46,31 @@ if __name__ == "__main__":
         parser.print_help()
         sys.exit(1)
 
-    #nlist = [ 10, 100, 1000 ]
+    nlist = [ i for i in xrange(100, 401, 25)]
     #nlist = [ 10, 50, 100 ]
 
-    mlist = [ 4, 16, 64, 256, 512 ]
-    klist = [ 1, 2, 4, 8, 16, 32 ]
+    mlist = [50] #[ 4, 16, 64, 256, 512 ]
+    klist = [20] #[ 1, 2, 4, 8, 16, 32 ]
 
     # factor 16 between max_m and max_k
     # max_k = max_m / 16
-    nhash = {
-        10 : {
-        "min_m" : 4,
-        "max_m" : 16,
-        "max_k" : 1
-        },
-        100 : {
-        "min_m" : 4,
-        "max_m" : 64,
-        "max_k" : 4
-        },
-        1000 : {
-        "min_m" : 16,
-        "max_m" : 512,
-        "max_k" : 32
-        }
-    }
+    # nhash = {
+    #     10 : {
+    #     "min_m" : 4,
+    #     "max_m" : 16,
+    #     "max_k" : 1
+    #     },
+    #     300 : {
+    #     "min_m" : 4,
+    #     "max_m" : 64,
+    #     "max_k" : 12
+    #     },
+    #     50 : {
+    #     "min_m" : 64,
+    #     "max_m" : 512,
+    #     "max_k" : 32
+    #     }
+    # }
 
 
     sfrac_min = 0
@@ -82,13 +82,13 @@ if __name__ == "__main__":
     min_seq_time = 1
     max_seq_time = 100
 
-    nb_instances = 5
+    nb_instances = 2
 
-    for n in nhash.keys():
+    for n in nlist:
         for m in mlist:
             for k in klist:
-                if m > nhash[n]["max_m"] or m < nhash[n]["min_m"] or k > nhash[n]["max_k"]:
-                    continue
+                # if m > nhash[n]["max_m"] or m < nhash[n]["min_m"] or k > nhash[n]["max_k"]:
+                #     continue
 
                 for i in xrange(0, nb_instances):
                     fname = "problem_n%d_m%d_k%d_i%d.in" % ( n, m, k, i )

@@ -19,18 +19,18 @@
 import JSON
 using JuMP
 using MathProgBase
-#using GLPKMathProgInterface
+using GLPKMathProgInterface
 #using CPLEX
-using Gurobi
+# using Gurobi
 using Logging
 
 include("approx_common.jl")
 
 function solve_problem_instance(in_stance::Dict, lambda::Float64)
-    #m = Model()
+    m = Model()
     #m = Model(solver=CplexSolver(CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1))
     #m = Model(solver=CPLEX.CplexSolver(CPX_PARAM_SCRIND=0))
-    m = Model(solver=Gurobi.GurobiSolver(ConcurrentMIP=8,LogToConsole=0))
+    # m = Model(solver=Gurobi.GurobiSolver(ConcurrentMIP=8,LogToConsole=0))
 
     #println( in_stance["meta"]["m"] )
     #println( in_stance["meta"]["n"] )

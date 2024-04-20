@@ -1,3 +1,3 @@
 #! /bin/bash
 
-julia ../../src/jl/benchmark.jl -i ./instances -o ./output -c
+../../julia/bin/julia ../../src/jl/benchmark.jl -i ./instances -o ./output -c

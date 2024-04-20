@@ -75,7 +75,7 @@ function compute_upperbound(data::SchedulerInput)
 end
 
 function getCutoffRatio()
-    return 1.01
+    return 1.10
 end
 
 

@@ -54,19 +54,19 @@ function run_benchmark(params::SchedulerParams)
     instance_fname = joinpath(params.inputdir, fname)
     instance = load_scheduling_instance(instance_fname)
 
-    alg = "approx2"
-    paths = get_output_file_names(fname, params.outdir, alg)
-#    println(paths)
-    println("alg: " * alg)
-    @printf "instance: %s\n" fname
-    inst_params = ScheduleInstanceParams(instance_fname, "", "")
-    if params.create_jedule == true
-      inst_params.jedfile = paths["jed_fname"]
-    end
-    if params.create_csv == true
-      inst_params.csvfile = paths["csv_fname"]
-    end
-    solve_problem_2approx(instance, inst_params)
+#     alg = "approx2"
+#     paths = get_output_file_names(fname, params.outdir, alg)
+# #    println(paths)
+#     println("alg: " * alg)
+#     @printf "instance: %s\n" fname
+#     inst_params = ScheduleInstanceParams(instance_fname, "", "")
+#     if params.create_jedule == true
+#       inst_params.jedfile = paths["jed_fname"]
+#     end
+#     if params.create_csv == true
+#       inst_params.csvfile = paths["csv_fname"]
+#     end
+#     solve_problem_2approx(instance, inst_params)
 
     alg = "approx32"
     paths = get_output_file_names(fname, params.outdir, alg)
@@ -81,24 +81,24 @@ function run_benchmark(params::SchedulerParams)
     end
     solve_problem(instance, inst_params)
 
-    for prio in ["lpt", "spt", "ratio"]
-      for seq_only in [0, 1]
-        println("alg: heft")
-        @printf "instance: %s\n" fname
-        alg = "heft" * "_" * prio * "_" * string(seq_only)
-        paths = get_output_file_names(fname, params.outdir, alg)
-        inst_params = ScheduleInstanceParams(instance_fname, "", "")
-        jed_fname = ""
-        if params.create_jedule == true
-          jed_fname = paths["jed_fname"]
-        end
-        csv_fname = ""
-        if params.create_csv == true
-          csv_fname = paths["csv_fname"]
-        end
-        apply_heft.build_heft_schedule(instance, seq_only, prio, jed_fname, csv_fname)
-      end
-    end
+    # for prio in ["lpt", "spt", "ratio"]
+    #   for seq_only in [0, 1]
+    #     println("alg: heft")
+    #     @printf "instance: %s\n" fname
+    #     alg = "heft" * "_" * prio * "_" * string(seq_only)
+    #     paths = get_output_file_names(fname, params.outdir, alg)
+    #     inst_params = ScheduleInstanceParams(instance_fname, "", "")
+    #     jed_fname = ""
+    #     if params.create_jedule == true
+    #       jed_fname = paths["jed_fname"]
+    #     end
+    #     csv_fname = ""
+    #     if params.create_csv == true
+    #       csv_fname = paths["csv_fname"]
+    #     end
+    #     apply_heft.build_heft_schedule(instance, seq_only, prio, jed_fname, csv_fname)
+    #   end
+    # end
 
   end
 
